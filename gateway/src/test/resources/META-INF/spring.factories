@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    tr.com.havelsan.limanpgtool.gateway.config.\
+    SqlTestContainersSpringContextCustomizerFactory

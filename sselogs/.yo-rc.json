@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 1,
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "sselogs",
+    "buildTool": "maven",
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "enableHibernateCache": false,
+    "entities": [],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "YzNkYzVhZDBlOTVmMDI3ZGY0NzIzZjY3NDlmMTNlMTJmMDE1YTI2ZWQwZGQ3YzFjZDM2OThjMzcwNzdhNWUwOGNjZTI4OTUyZWQ4OGViOTdhY2Q4ODg4M2NjZTcxNjM1YWJiYjliNWIzOTM3YTVjYjI5ZTJlOWQ5ZmIwNjIxOGY=",
+    "languages": ["en"],
+    "nativeLanguage": "en",
+    "packageName": "tr.com.havelsan.limanpgtool.sselogs",
+    "prodDatabaseType": "no",
+    "serverPort": "8084",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

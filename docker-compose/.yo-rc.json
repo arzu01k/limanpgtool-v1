@@ -1,0 +1,15 @@
+{
+  "generator-jhipster": {
+    "adminPassword": "admin",
+    "appsFolders": ["gateway", "sselogs"],
+    "clusteredDbApps": [],
+    "deploymentType": "docker-compose",
+    "directoryPath": "../",
+    "dockerRepositoryName": "tolgor",
+    "gatewayType": "SpringCloudGateway",
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "NGVhODNhYWVhYWJmMDliNmIzMDM3ZTk5MTZiNzlkMmM2NzYxYjE0ZTE3M2VkYTM2NDBhNWU3N2EzZTZmOGI4Y2MxNDJiNDg3OTg5ZDllYmRhNjg4OThmNDA0NzM0ZDE3OWJkYg==",
+    "monitoring": "no",
+    "serviceDiscoveryType": "consul"
+  }
+}

@@ -1,0 +1,56 @@
+application {
+  config {
+    baseName gateway 
+    packageName tr.com.havelsan.limanpgtool.gateway
+    applicationType gateway
+    authenticationType jwt 
+    buildTool maven 
+    clientFramework react
+    databaseType sql
+    prodDatabaseType postgresql
+    devDatabaseType postgresql
+    serviceDiscoveryType eureka
+    languages [en]
+  } 
+   entities User, Userrole
+}
+
+application {
+  config {
+    baseName sselogs
+    packageName tr.com.havelsan.limanpgtool.sselogs
+    applicationType microservice
+    authenticationType jwt
+    buildTool maven
+    databaseType no
+    prodDatabaseType no
+    devDatabaseType no
+    enableHibernateCache false
+    serverPort 8084
+    serviceDiscoveryType eureka
+    skipUserManagement true
+  }
+}
+
+entity User {
+    login String required minlength(3)
+    name String required
+    surname String required
+}
+
+entity Userrole {
+    role String required
+}
+
+relationship ManyToOne {
+    Userrole{user(login)} to User
+}
+
+dto * with mapstruct
+
+deployment { 
+    deploymentType docker-compose
+    appsFolders [gateway, sselogs]
+    dockerRepositoryName "tolgor"
+}
+

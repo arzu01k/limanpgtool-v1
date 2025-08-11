@@ -1,0 +1,25 @@
+{
+  "gatewayApp": {
+    "userrole": {
+      "home": {
+        "title": "Userroles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Userrole",
+        "createOrEditLabel": "Create or edit a Userrole",
+        "notFound": "No Userroles found"
+      },
+      "created": "A new Userrole is created with identifier {{ param }}",
+      "updated": "A Userrole is updated with identifier {{ param }}",
+      "deleted": "A Userrole is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Userrole {{ id }}?"
+      },
+      "detail": {
+        "title": "Userrole"
+      },
+      "id": "ID",
+      "role": "Role",
+      "user": "User"
+    }
+  }
+}
