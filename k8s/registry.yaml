@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jhipster-registry
+  namespace: liman
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jhipster-registry
+  template:
+    metadata:
+      labels:
+        app: jhipster-registry
+    spec:
+      containers:
+        - name: registry
+          image: jhipster/jhipster-registry:v7.4.0
+          ports:
+            - containerPort: 8761
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: native,dev,api-docs
+            - name: JHIPSTER_REGISTRY_PASSWORD
+              value: admin
+            - name: SPRING_SECURITY_USER_PASSWORD
+              value: admin
+            - name: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
+              value: "NzM2QWlYT2JYUzMyMWRpQnVQRm9wMjk3dXc1azlhS1E=" # ← örnek: "my-secret-key" base64 hali
+          readinessProbe:
+            httpGet:
+              path: /management/health
+              port: 8761
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /management/health
+              port: 8761
+            initialDelaySeconds: 20
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jhipster-registry
+  namespace: liman
+spec:
+  selector:
+    app: jhipster-registry
+  ports:
+    - name: http
+      port: 8761
+      targetPort: 8761
+  type: NodePort
