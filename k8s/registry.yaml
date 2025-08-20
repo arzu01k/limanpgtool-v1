@@ -23,10 +23,12 @@ spec:
               value: native,dev,api-docs
             - name: JHIPSTER_REGISTRY_PASSWORD
               value: admin
+            - name: SPRING_SECURITY_USER_NAME
+              value: admin
             - name: SPRING_SECURITY_USER_PASSWORD
               value: admin
             - name: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
-              value: "NzM2QWlYT2JYUzMyMWRpQnVQRm9wMjk3dXc1azlhS1E=" # ← örnek: "my-secret-key" base64 hali
+              value: "NzM2QWlYT2JYUzMyMWRpQnVQRm9wMjk3dXc1azlhS1E="
           readinessProbe:
             httpGet:
               path: /management/health
